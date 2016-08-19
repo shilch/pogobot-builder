@@ -23,6 +23,7 @@
     "angular": "^1.5.8",
     "ngmap": "^1.17.3",
     "ng-tags-input": "^3.1.1",
-    "font-awesome": "^4.6.3"
+    "font-awesome": "^4.6.3",
+    "jszip": "Stuk/jszip#^3.1.1"
   }
 }

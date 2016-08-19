@@ -80,25 +80,66 @@ app.controller("listController", function($scope, $http, $element){
   };
 });
 
-app.controller("buttonController", function($scope, $http){
+app.controller("buttonConfigController", function($scope){
   $scope.click = function(){
-    var serialized = $('form').serializeArray();
-    $http.get('data/v' + botVersion + '/config.properties.template')
-      .then(function(response){
-        var data = response.data;
-        for(var i = 0; i < serialized.length; i++){
-          var serializedPair = serialized[i];
-          data = data.replace(new RegExp(serializedPair.name + '=.*'), serializedPair.name + '=' + serializedPair.value);
-        }
-        // download('config.properties', data);
-        alert(data);
-      });
+    getGeneratedConfigFile(function(err, data){
+      download('config.properties', new Blob([data], {
+        type: 'text/plain'
+      }));
+    });
   };
 });
 
-function download(filename, text) {
+app.controller("buttonPackageController", function($scope){
+  $scope.click = function(){
+    getGeneratedConfigFile(function(err, config){
+      getBotJar(function(err, jar){
+        var name = 'PokemonGoBot-v' + botVersion;
+
+        var zip = new JSZip();
+        var folder = zip.folder(name);
+        folder.file('config.properties', config);
+        folder.file('bot.jar', jar, {
+          type: 'binary'
+        });
+        folder.file('start.bat', 'java -jar bot.jar\n');
+        zip.generateAsync({ type: 'blob' })
+          .then(function(blob) {
+            download(name + '.zip', blob);
+          });
+      });
+    });
+  };
+});
+
+function getGeneratedConfigFile(callback){
+  var serialized = $('form').serializeArray();
+  $.get('data/v' + botVersion + '/config.properties.template', function(data){
+    for(var i = 0; i < serialized.length; i++){
+      var serializedPair = serialized[i];
+      data = data.replace(new RegExp(serializedPair.name + '=.*'), serializedPair.name + '=' + serializedPair.value);
+    }
+    callback(null, data);
+  });
+}
+
+function getBotJar(callback){
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'data/v' + botVersion + '/bot.jar', true);
+  xhr.responseType = 'arraybuffer';
+
+  xhr.onload = function(e) {
+    if (xhr.status == 200) {
+      callback(null, new Uint8Array(xhr.response));
+    }
+  };
+
+  xhr.send();
+}
+
+function download(filename, blob) {
   var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute('href', URL.createObjectURL(blob));
   element.setAttribute('download', filename);
 
   element.style.display = 'none';

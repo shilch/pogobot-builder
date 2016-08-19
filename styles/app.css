@@ -11,6 +11,7 @@
     border-radius: 8px !important;
 }
 
-.button-margin {
+.button-group-wrap {
+    text-align: center;
     margin: 20px;
 }
