@@ -1,0 +1,22 @@
+{
+  "name": "pogobot-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/allParamsSettable.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shilch/pogobot-builder.git"
+  },
+  "author": "shilch",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shilch/pogobot-builder/issues"
+  },
+  "homepage": "https://github.com/shilch/pogobot-builder#readme"
+}

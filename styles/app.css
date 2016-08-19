@@ -1,0 +1,16 @@
+.map {
+    margin: 10px 0;
+}
+
+.map > div {
+    width: 100%;
+    height: 400px;
+    background-color: transparent !important;
+}
+.map > div > div {
+    border-radius: 8px !important;
+}
+
+.button-margin {
+    margin: 20px;
+}

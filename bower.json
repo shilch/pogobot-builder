@@ -1,0 +1,28 @@
+{
+  "name": "pogobot-builder",
+  "homepage": "get.pogobot.club",
+  "authors": [
+    "shilch"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "jQuery": "^3.1.0",
+    "bootswatch": "^3.3.6+2",
+    "jquery-latitude-longitude-picker-gmaps": "https://github.com/wimagguc/jquery-latitude-longitude-picker-gmaps.git#^1.1.0",
+    "angular": "^1.5.8",
+    "ngmap": "^1.17.3",
+    "ng-tags-input": "^3.1.1",
+    "font-awesome": "^4.6.3"
+  }
+}
