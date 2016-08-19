@@ -1,8 +1,17 @@
 var fs = require('fs');
 var path = require('path');
 
-var pathStructure         = path.join(__dirname, 'data/structure.json');
-var pathConfigProperties  = path.join(__dirname, 'data/config.properties.template');
+var version;
+if(process.argv.length !== 3){
+  console.log('Usage: node diff-structure-config.js [VERSION]');
+  console.log('e.g. node diff-structure-config.js 0.6.0');
+  return;
+} else {
+  version = process.argv[2];
+}
+
+var pathStructure         = path.join(__dirname, 'data/v' + version + '/structure.json');
+var pathConfigProperties  = path.join(__dirname, 'data/v' + version + '/config.properties.template');
 var regexConfigProperties = /^([^\s]+)=[^\s]*$/gm;
 
 var structure = JSON.parse(fs.readFileSync(pathStructure));
