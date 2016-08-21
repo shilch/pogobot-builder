@@ -9,5 +9,8 @@ Just fill in the fields and click `Generate package`. Your bot is ready now :)
 Your browser will automatically download a zip file containing all necessary files.  
 ![Zip File](https://cloud.githubusercontent.com/assets/11890358/17822188/edbf79c6-6655-11e6-8620-cef318a44fc7.png)  
 
+## How to run it?
+Either visit [Pogobot Builder Website](https://pogobot-builder.github.io) or clone the project, run `bower install` and serve it, e.g. with `sudo python -m SimpleHTTPServer 80`.
+
 ## Contributors
 - [shilch](https://github.com/shilch)
