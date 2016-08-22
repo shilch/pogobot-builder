@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Pokemon Go Bot Builder</title>
 
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+
         <link href="../bower_components/bootswatch/darkly/bootstrap.min.css" rel="stylesheet" type="text/css">
         <link href="../bower_components/jquery-latitude-longitude-picker-gmaps/css/jquery-gmaps-latlon-picker.css" rel="stylesheet" type="text/css">
         <link href="../bower_components/ng-tags-input/ng-tags-input.min.css" rel="stylesheet" type="text/css">
@@ -59,11 +61,15 @@
             </form>
             <div class="center-block button-group-wrap">
                 <div class="btn-group">
-                    <input ng-click="click()" type="button" value="Gimme the config" class="btn btn-warning" ng-controller="buttonConfigController">
-                    <input ng-click="click()" type="button" value="Generate package" class="btn btn-primary" ng-controller="buttonPackageController">
+                    <button ng-click="click()" class="btn btn-warning" ng-controller="buttonConfigController" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Building configuration file">Get config only</button>
+                    <button ng-click="click()" class="btn btn-primary" ng-controller="buttonPackageController" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Building package">Generate package</button>
                 </div>
-                <p>This may take a few seconds depending on your network connection and browser performance.</p>
-                <p>Copyright by <a href="https://github.com/shilch" target="_blank">shilch</a></p>
+                <div class="foot-info">
+                    <p>
+                        This may take a few seconds depending on your network connection and browser performance.<br>
+                        Copyright by <a href="https://github.com/shilch" target="_blank">shilch</a>
+                    </p>
+                </div>
             </div>
         </div>
 

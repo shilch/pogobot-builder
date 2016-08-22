@@ -86,17 +86,24 @@ app.controller("listController", function($scope, $http, $element){
   };
 });
 
-app.controller("buttonConfigController", function($scope){
+app.controller("buttonConfigController", function($scope, $element){
+  var button = $($element[0]);
+
   $scope.click = function(){
+    button.button('loading');
     getFileAsPlainText(baseUrl + '/config.properties.template', function(err, template){
       template = buildConfig(template);
       download( 'config.properties', new Blob([template], { type: 'text/plain' }) );
+      button.button('reset');
     });
   };
 });
 
-app.controller("buttonPackageController", function($scope){
+app.controller("buttonPackageController", function($scope, $element){
+  var button = $($element[0]);
+
   $scope.click = function(){
+    button.button('loading');
     async.waterfall([
       async.apply(getFileAsJson, baseUrl + '/content.json'),
       function(content, done){
@@ -135,6 +142,7 @@ app.controller("buttonPackageController", function($scope){
       zip.generateAsync({ type: 'blob' })
         .then(function(blob) {
           download(name + '.zip', blob);
+          button.button('reset');
         });
     });
   };
