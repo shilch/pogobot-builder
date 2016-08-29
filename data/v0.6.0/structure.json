@@ -86,10 +86,10 @@
     "name": "catch_pokemon",
     "type": "select",
     "options": [{
-      "text": "The bot catches pokemon",
+      "text": "Catch pokemon",
       "value": "true"
     },{
-      "text": "The bot does not catch pokemon",
+      "text": "Do not catch pokemon",
       "value": "false"
     }]
   },{
