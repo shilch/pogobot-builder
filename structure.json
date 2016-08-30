@@ -28,7 +28,7 @@
   }]
 },{
   "title": "Proxy",
-  "subtitle": "Hide you ip address. Leave fields empty to disable proxy.",
+  "subtitle": "Hide your ip address. Leave fields empty to disable proxy.",
   "options": [{
     "title": "Proxy Server",
     "name": "proxy_server",
