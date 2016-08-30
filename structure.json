@@ -1,0 +1,668 @@
+[{
+  "title": "Login",
+  "subtitle": "We will not store you login information, the file is generated on client side.",
+  "options": [{
+    "title": "GMail Address or PTC Username",
+    "name": "username",
+    "html": {
+      "type": "text",
+      "placeholder": "GMail Address or PTC Username"
+    }
+  },{
+    "title": "Password",
+    "name": "password",
+    "html": {
+      "type": "password",
+      "placeholder": "Password"
+    }
+  }]
+},{
+  "title": "Location",
+  "subtitle": "Set the location where the bot should start. Simply drag and drop the marker.",
+  "options": [{
+    "type": "map",
+    "latitude": "latitude",
+    "longitude": "longitude",
+    "defLatitude": 40.785091,
+    "defLongitude": -73.968285
+  }]
+},{
+  "title": "Proxy",
+  "subtitle": "Hide your ip address. Leave fields empty to disable proxy.",
+  "options": [{
+    "title": "Proxy Server",
+    "name": "proxy_server",
+    "html": {
+      "type": "text",
+      "placeholder": "Proxy Server"
+    }
+  },{
+    "title": "Proxy Port",
+    "name": "proxy_port",
+    "html": {
+      "type": "number",
+      "value": -1,
+      "min": -1,
+      "max": 65535,
+      "step": 1
+    }
+  },{
+    "title": "Proxy Type",
+    "name": "proxy_type",
+    "type": "select",
+    "options": [
+      {
+        "text": "DIRECT (no proxy)",
+        "value": "DIRECT"
+      },
+      {
+        "text": "SOCKS",
+        "value": "SOCKS"
+      },
+      {
+        "text": "HTTP",
+        "value": "HTTP"
+      }
+    ]
+  },{
+    "title": "Proxy Username",
+    "name": "proxy_username",
+    "html": {
+      "type": "text",
+      "placeholder": "Proxy Username"
+    }
+  },{
+    "title": "Proxy Password",
+    "name": "proxy_password",
+    "html": {
+      "type": "password",
+      "placeholder": "Proxy Password"
+    }
+  }]
+},{
+  "title": "Catching",
+  "subtitle": "Let the bot throw like a human.",
+  "options": [{
+    "name": "catch_pokemon",
+    "type": "select",
+    "options": [{
+      "text": "Catch pokemon",
+      "value": "true"
+    },{
+      "text": "Do not catch pokemon",
+      "value": "false"
+    }]
+  },{
+    "title": "Desired catch probability",
+    "name": "desired_catch_probability",
+    "html": {
+      "type": "number",
+      "value": 0.4,
+      "min": 0.1,
+      "max": 1,
+      "step": 0.1
+    }
+  },{
+    "title": "Desired probability to catch unwanted Pokemon, -1 = do not catch",
+    "name": "desired_catch_probability_unwanted",
+    "html": {
+      "type": "number",
+      "value": 0.0,
+      "min": -1,
+      "max": 1,
+      "step": 0.1
+    }
+  },{
+    "name": "random_ball_throws",
+    "type": "select",
+    "options": [{
+      "text": "Random ball throws disabled",
+      "value": "false"
+    },{
+      "text": "Random ball throws enabled",
+      "value": "true"
+    }]
+  },{
+    "name": "wait_between_throws",
+    "type": "select",
+    "options": [{
+      "text": "Do not wait between throws",
+      "value": "false"
+    },{
+      "text": "Wait 0-3s between throws",
+      "value": "true"
+    }]
+  },{
+    "title": "Rate for bot to throw a curveball, between 0 (never) and 1 (always)",
+    "name": "desired_curve_rate",
+    "html": {
+      "type": "number",
+      "value": 0.0,
+      "min": 0,
+      "max": 1,
+      "step": 0.1
+    }
+  },{
+    "name": "never_use_berries",
+    "type": "select",
+    "options": [{
+      "text": "Never use berries (recommended)",
+      "value": "true"
+    },{
+      "text": "Use berries",
+      "value": "false"
+    }]
+  }]
+},{
+  "title": "Movement",
+  "options": [{
+    "name": "loot_pokestop",
+    "type": "select",
+    "options": [{
+      "text": "Loot pokestops",
+      "value": "true"
+    },{
+      "text": "Do not loot pokestops",
+      "value": "false"
+    }]
+  },{
+    "title": "Number of nearest unused pokestops to randomly select",
+    "name": "random_next_pokestop_selection",
+    "html": {
+      "type": "number",
+      "value": 5,
+      "min": 1,
+      "max": 30,
+      "step": 1
+    }
+  },{
+    "name": "camp_lure_pokestop",
+    "type": "select",
+    "options": [{
+      "text": "Do not camp around pokestops",
+      "value": "-1"
+    },{
+      "text": "Camp around pokestop",
+      "value": "1"
+    },{
+      "text": "Camp around 2 pokestops",
+      "value": "2"
+    },{
+      "text": "Camp around 3 pokestops",
+      "value": "3"
+    }]
+  },{
+    "title": "Walking speed",
+    "name": "speed",
+    "html": {
+      "type": "number",
+      "value": 2.8,
+      "min": 0.1,
+      "step": 0.1
+    }
+  },{
+    "title": "Random speed range around the walking speed",
+    "name": "random_speed_range",
+    "html": {
+      "type": "number",
+      "value": 0.0,
+      "min": 0.0,
+      "step": 0.1
+    }
+  },{
+    "name": "follow_streets",
+    "type": "select",
+    "options": [{
+      "text": "Go straight to the next pokestop",
+      "value": "false"
+    },{
+      "text": "Follow streets to next pokestop",
+      "value": "true"
+    }]
+  },{
+    "name": "allow_leave_start_area",
+    "type": "select",
+    "options": [{
+      "text": "Do not leave start area",
+      "value": "false"
+    },{
+      "text": "Allow to leave start area",
+      "value": "true"
+    }]
+  },{
+    "title": "Set timer in seconds to go back to the starting pokestop (-1 disabled)",
+    "name": "timer_walk_to_start_pokestop",
+    "html": {
+      "type": "number",
+      "value": -1,
+      "min": -1,
+      "step": 1
+    }
+  },{
+    "title": "Chance to wait randomly at a pokestop in %, recommended about 10 or less, default disabled",
+    "name": "wait_chance",
+    "html": {
+      "type": "number",
+      "value": 0,
+      "min": 0,
+      "max": 100,
+      "step": 1
+    }
+  },{
+    "title": "Minimum time to wait in seconds, recommended 5, default disabled",
+    "name": "wait_time_min",
+    "html": {
+      "type": "number",
+      "value": 0,
+      "min": 0,
+      "step": 1
+    }
+  },{
+    "title": "Maximum time to wait in seconds, recommended 30, default disabled",
+    "name": "wait_time_max",
+    "html": {
+      "type": "number",
+      "value": 0,
+      "min": 0,
+      "step": 1
+    }
+  }]
+},{
+  "title": "Inventory",
+  "options": [{
+    "name": "auto_fill_incubator",
+    "type": "select",
+    "options": [{
+      "text": "Auto fill free incubators with eggs",
+      "value": "true"
+    },{
+      "text": "Do not fill incubators with eggs",
+      "value": "false"
+    }]
+  }, {
+    "name": "drop_items",
+    "type": "select",
+    "options": [
+      {
+        "text": "Drop items",
+        "value": "true"
+      }, {
+        "text": "Do not drop items",
+        "value": "false"
+      }
+    ]
+  },{
+      "title": "Max number of revives to keep",
+      "name": "item_revive",
+      "html": {
+        "type": "number",
+        "value": 20,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of max_revives to keep",
+      "name": "item_max_revive",
+      "html": {
+        "type": "number",
+        "value": 10,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of potions to keep",
+      "name": "item_potion",
+      "html": {
+        "type": "number",
+        "value": 0,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of super_potions to keep",
+      "name": "item_super_potion",
+      "html": {
+        "type": "number",
+        "value": 30,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of hyper_potions to keep",
+      "name": "item_hyper_potion",
+      "html": {
+        "type": "number",
+        "value": 50,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of max_potions to keep",
+      "name": "item_max_potion",
+      "html": {
+        "type": "number",
+        "value": 50,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of pokeballs to keep",
+      "name": "item_poke_ball",
+      "html": {
+        "type": "number",
+        "value": 40,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of greatballs to keep",
+      "name": "item_great_ball",
+      "html": {
+        "type": "number",
+        "value": 50,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of ultraballs to keep",
+      "name": "item_ultra_ball",
+      "html": {
+        "type": "number",
+        "value": 50,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of masterballs to keep",
+      "name": "item_master_ball",
+      "html": {
+        "type": "number",
+        "value": 10,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of berries to keep",
+      "name": "item_razz_berry",
+      "html": {
+        "type": "number",
+        "value": 50,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of lucky_eggs to keep",
+      "name": "item_lucky_egg",
+      "html": {
+        "type": "number",
+        "value": -1,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of incenses to keep",
+      "name": "item_incense",
+      "html": {
+        "type": "number",
+        "value": -1,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    },{
+      "title": "Max number of lure_modules to keep",
+      "name": "item_lure_module",
+      "html": {
+        "type": "number",
+        "value": -1,
+        "min": -1,
+        "max": 100,
+        "step": 1
+      }
+    }, {
+    "name": "group_items_by_type",
+    "type": "select",
+    "options": [
+      {
+        "text": "Do not group these items by type",
+        "value": "false"
+      }, {
+        "text": "Group these items by type to keep the best items of a type",
+        "value": "true"
+      }
+    ]
+  }]
+},{
+  "title": "Transfer",
+  "options": [{
+    "name": "autotransfer",
+    "type": "select",
+    "options": [{
+      "text": "Autotransfer duplicate pokemon",
+      "value": "true"
+    },{
+      "text": "Do not autotransfer duplicate pokemon",
+      "value": "false"
+    }]
+  },{
+    "title": "Minimum amount of pokemon type to keep",
+    "name": "keep_pokemon_amount",
+    "html": {
+      "type": "number",
+      "value": 1,
+      "min": 1,
+      "max": 100,
+      "step": 1
+    }
+  },{
+    "title": "Maximum amount of pokemon type to keep (-1 to keep all)",
+    "name": "max_pokemon_amount",
+    "html": {
+      "type": "number",
+      "value": -1,
+      "min": -1,
+      "max": 100,
+      "step": 1
+    }
+  },{
+    "title": "Minimum IV percentage to keep a pokemon (to ignore IV: use -1)",
+    "name": "transfer_iv_threshold",
+    "html": {
+      "type": "number",
+      "value": 80,
+      "min": 1,
+      "max": 100,
+      "step": 1
+    }
+  },{
+    "title": "Minimum CP to keep a pokemon (to ignore CP: use -1)",
+    "name": "transfer_cp_threshold",
+    "html": {
+      "type": "number",
+      "value": 400,
+      "min": 1,
+      "max": 4145,
+      "step": 1
+    }
+  },{
+    "title": "List of pokemon you don't want to transfer regardless of CP",
+    "name": "ignored_pokemon",
+    "type": "list",
+    "values": [
+      "EEVEE",
+      "MEWTWO",
+      "CHARMANDER"
+    ],
+    "autocomplete": "data/pokemon.json"
+  },{
+    "title": "List of pokemon you always want to transfer regardless of CP",
+    "name": "obligatory_transfer",
+    "type": "list",
+    "values": [
+      "DODUO",
+      "RATTATA",
+      "CATERPIE",
+      "PIDGEY"
+    ],
+    "autocomplete": "data/pokemon.json"
+  },{
+    "title": "List of pokemon you always want to evolve before transfer to maximize XP",
+    "name": "evolve_before_transfer",
+    "type": "list",
+    "values": [
+      "CATERPIE",
+      "RATTATA",
+      "WEEDLE",
+      "PIDGEY"
+    ],
+    "autocomplete": "data/pokemon.json"
+  },{
+    "title": "The stack of evolves needed to (pop lucky egg and) evolve all",
+    "name": "evolve_stack_limit",
+    "html": {
+      "type": "number",
+      "value": 100,
+      "min": 1,
+      "max": 1000,
+      "step": 1
+    }
+  },{
+    "name": "use_lucky_egg",
+    "type": "select",
+    "options": [
+      {
+        "text": "Use lucky egg before evolving the stack",
+        "value": "1"
+      }, {
+        "text": "Do not use lucky egg before evolving the stack",
+        "value": "0"
+      }
+    ]
+  }]
+},{
+  "title": "Output",
+  "options": [{
+    "name": "display_pokestop_rewards",
+    "type": "select",
+    "options": [{
+      "text": "Display pokestop rewards",
+      "value": "true"
+    },{
+      "text": "Do not display pokestop rewards",
+      "value": "false"
+    }]
+  },{
+    "name": "display_if_pokemon_from_lure",
+    "type": "select",
+    "options": [{
+      "text": "Display if pokemon was caught from lure",
+      "value": "true"
+    },{
+      "text": "Do not display if pokemon was caught from lure",
+      "value": "false"
+    }]
+  },{
+    "name": "display_pokemon_catch_rewards",
+    "type": "select",
+    "options": [{
+      "text": "Display rewards when catching pokemon",
+      "value": "true"
+    },{
+      "text": "Do not display rewards when catching pokemon",
+      "value": "false"
+    }]
+  },{
+    "name": "display_keepalive",
+    "type": "select",
+    "options": [{
+      "text": "Display keepalive coordinates",
+      "value": "true"
+    },{
+      "text": "Do not display keepalive coordinates",
+      "value": "false"
+    }]
+  },{
+    "name": "display_pokestop_name",
+    "type": "select",
+    "options": [{
+      "text": "Do not display pokestop names (recommended)",
+      "value": "false"
+    },{
+      "text": "Display pokestop names",
+      "value": "true"
+    }]
+  },{
+    "name": "sort_by_iv",
+    "type": "select",
+    "options": [{
+      "text": "Sort by CP",
+      "value": "false"
+    },{
+      "text": "Sort by IV",
+      "value": "true"
+    }]
+  },{
+    "name": "profile_update_timer",
+    "title": "Set profile update timer (Default: 60)",
+    "html": {
+      "type": "number",
+      "value": 60,
+      "min": 1,
+      "max": 1000,
+      "step": 1
+    }
+  }]
+},{
+  "title": "Monitoring",
+  "options": [{
+    "name": "gui_port_socket",
+    "title": "GUI Socket-Port to access Bot UI at ui.pogobot.club",
+    "html": {
+      "type": "number",
+      "value": 8001,
+      "min": 1,
+      "max": 65535,
+      "step": 1
+    }
+  },{
+    "name": "export",
+    "type": "select",
+    "options": [{
+      "text": "Do not export player data",
+      "value": ""
+    },{
+      "text": "Export as CSV",
+      "value": "CSV"
+    },{
+      "text": "Export as DSV (European CSV)",
+      "value": "DSV"
+    },{
+      "text": "Export as JSON",
+      "value": "JSON"
+    }]
+  }]
+},{
+  "title": "Miscellaneous",
+  "options": [{
+    "name": "ban_spin_count",
+    "title": "Number of times the pokestop should be spun to attempt softban bypass (0 to disable, 40 recommended value to work)",
+    "html": {
+      "type": "number",
+      "value": 0,
+      "min": 0,
+      "step": 1
+    }
+  }]
+}]
